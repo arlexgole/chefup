@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="game.js"></script>
+
+         <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div id="container">
+        <h1> ChefUp </h1>
+            <div id="start"> 
+                <p> Pick one </p>
+                <img id="chef_intro" src="chef_intro.png">
+                <div class="skills">
+                    <div class="skill" id="portion">
+                        <p> Portioning </p>
+                    </div>
+                    <div class="skill" id="cutting">
+                        <p> Cutting </p>
+                    </div>
+                    <div class="skill">
+                        <p> Safety </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="portionGame"> 
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p> You put too much salt! </p>
+                        <img id="chef" src="chef.png">
+                    </div>
+                </div>
+                <p> ( Press space to put some salt ) </p>
+                
+                <div id="bar"> </div>
+                <div id="green"> </div>
+                <div id="line"> </div>
+
+                <img id="pot" src="pot.png">
+
+            </div>
+
+            <div id="cuttingLesson">
+                <p> Holding a knife </p>
+                <div class="backButton"> &larr; Back </div>
+                <img id="knife" src="holdingKnife.png">
+
+                <p class="longText"> This is how you hold a knife. </p>
+                <p class="longText"> Before you start chopping anything, you want to make sure you're holding the knife correctly. 
+                <p class="longText"> This means putting your finger and your thumb at the very back of the knife and wrapping your fingers around the handle. </p>
+
+                <div class="button" id="continue"> Continue </div>
+            </div>
+
+
+            <div id="cuttingGame"> 
+                <p> Use your mouse to cut. </p>
+                <img id="cuttingBoard" src="cuttingBoard.png" draggable="False">
+                <img id="onion" src="onion.png" draggable="False">
+            
+                <p class="longText"> Before you start chopping anything, you want to make sure you're holding the knife correctly. 
+
+                <div class="button"> Continue </div>
+            </div>
+    </body>
+</html>
