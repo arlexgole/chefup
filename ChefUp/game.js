@@ -1,4 +1,4 @@
-var mode = "start"; 
+var mode = "intro"; 
 var x_pos = 301;
 var pressed = false;
 var completed = false;
@@ -6,6 +6,18 @@ var key = false;
 
 
 $(document).ready(function(){
+	// intro page
+	var introPage = document.getElementById('introPage');
+	var play = document.getElementById('playButton');
+	// start page
+	var start = document.getElementById('startPage');
+
+	play.onclick = function() {
+	    introPage.style.visibility = "hidden";
+	    start.style.visibility = "visible";
+	    mode = "start"
+	}
+
 	// Get the modal
 	var modal = document.getElementById('myModal');
 	// Get the <span> element that closes the modal
@@ -16,8 +28,7 @@ $(document).ready(function(){
 	}
 
 
-	// start page
-	var start = document.getElementById('start');
+
 
 	// buttons in the start page
 	var portion = document.getElementById("portion");

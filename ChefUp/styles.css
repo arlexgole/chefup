@@ -16,10 +16,9 @@ body{
 	border-color: #C0C0C0;
 }
 
-/*the start screen*/
-#start{
+/*the intro page: first page that users see*/
+#introPage{
 	position: absolute;
-	/*margin-top: 50px;*/
 	margin-left: auto;
 	margin-right: auto;
 	height: 600px;
@@ -29,7 +28,7 @@ body{
 }
 
 /*portion game screen*/
-#portionGame, #cuttingLesson, #cuttingGame{
+#startPage, #portionGame, #cuttingLesson, #cuttingGame{
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
@@ -39,12 +38,77 @@ body{
 	padding-bottom: 0px;
 }
 
+#startPage{
+	background-color: #ff6b6b;
+}
 
+/*introPage*/
+#pinkSection{
+	height: 400px;
+	background-color: #ff6b6b;
+}
+#chefIntro{
+	position: absolute;
+	top: 20px;
+	left: 300px;
+}
 h1{
+	margin-top: 60px;
 	text-align: center;
 	font-weight: 400;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
+	font-size: 50px;
+	color: #eb3b5a;
+}
+#playButton{
+	width: 70px;
+	position: absolute;
+	top: 100px;
+	left: 150px;
+    background-color: white;
+    color: #eb3b5a;
+    padding: 12px 50px;
+    font-size: 20px;
+}
+#aboutButton{
+	width: 70px;
+	position: absolute;
+	top: 200px;
+	left: 150px;
+    background-color: white;
+    color: #eb3b5a;
+    padding: 12px 50px;
+    font-size: 20px;
+}
+
+
+
+/*startPage*/
+#chefStart{
+	position: absolute;
+	top: 50px;
+	left: 200px;
+}
+#chefSpeak{
+	width: 450px;
+	position: absolute;
+	top: 200px;
+	left: 520px;
+    background-color: white;
+    border: none;
+    color: #eb3b5a;
+    padding: 25px 50px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+}
+#accept{
+	background-color: white;
+	color: #20bf6b;
+	left: 200px;
+	top: 400px;
 }
 
 p{
