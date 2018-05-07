@@ -1,4 +1,4 @@
-var mode = "intro"; 
+var mode = "introPage"; 
 var x_pos = 301;
 var pressed = false;
 var completed = false;
@@ -10,13 +10,35 @@ $(document).ready(function(){
 	var introPage = document.getElementById('introPage');
 	var play = document.getElementById('playButton');
 	// start page
-	var start = document.getElementById('startPage');
-
+	var playPage = document.getElementById('playPage');
+	// player clicks play
 	play.onclick = function() {
 	    introPage.style.visibility = "hidden";
-	    start.style.visibility = "visible";
-	    mode = "start"
+	    playPage.style.visibility = "visible";
+	    mode = "startPage"
 	}
+
+
+	var yes = document.getElementById('yesButton');
+	var selectPage = document.getElementById('selectPage');
+	// player clicks Yes
+	yes.onclick = function() {
+	    playPage.style.visibility = "hidden";
+	    selectPage.style.visibility = "visible";
+	    mode = "selectPage";
+	    console.
+	}
+	
+	var backButton = document.getElementById('backButton');
+
+	backButton.onclick = function() {
+		console.log("back");
+	    // if (mode == "portion"){
+	    // 	selectPage.style.visibility = "visible";
+	    // 	portionGame.style.visibility = "hidden";
+	    // }
+	}
+
 
 	// Get the modal
 	var modal = document.getElementById('myModal');
@@ -26,7 +48,6 @@ $(document).ready(function(){
 	span.onclick = function() {
 	    modal.style.display = "none";
 	}
-
 
 
 
@@ -48,13 +69,14 @@ $(document).ready(function(){
 	portion.onclick = function() {
 	    hideAll();
 	    portionGame.style.visibility = "visible";
-	    mode = "portion"
+	    backButton.style.visibility = "visible";
+	    mode = "portion";
 	}
 
 	cutting.onclick = function() {
 	    hideAll();
 	    cuttingLesson.style.visibility = "visible";
-	    mode = "cutting"
+	    mode = "cutting";
 	}
 
 	onion.onclick = function() {
@@ -64,12 +86,13 @@ $(document).ready(function(){
 	continueB.onclick = function() {
 	    hideAll();
 	    cuttingGame.style.visibility = "visible";
-	    mode = "portion"
+	    mode = "portion";
 	}
 
 	// hiding all the screens
 	function hideAll(){
-		start.style.visibility = "hidden";
+		selectPage.style.visibility = "hidden";
+		playPage.style.visibility = "hidden";
 		portionGame.style.visibility = "hidden";
 		cuttingLesson.style.visibility = "hidden";
 	}
@@ -83,7 +106,7 @@ function startGame() {
 		if (mode == "portion"){
     		key = e.keyCode;
     		pressed = true; 
-    		console.log('true')
+    		console.log('true');
     	}
 	});
 

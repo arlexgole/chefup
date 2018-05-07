@@ -15,28 +15,32 @@
 
     <body>
         <div id="container">
-        <!-- <h1> ChefUp </h1> -->
+            <div id="backButton"> &larr; Back </div>
             <div id="introPage"> 
+                <div id="whiteSection">
+                    <h1> ChefUp: Learn to Cook </h1> 
+                </div>  
                 <div id="pinkSection">
                     <img src="chef.png" id="chefIntro"> 
                     <div class="button" id="playButton"> Play </div>
                     <div class="button" id="aboutButton"> About </div>
 
                 </div>
-                <h1> ChefUp: Learn to Cook </h1>         
+                      
             </div>
 
-            <div id="startPage"> 
+            <div id="playPage"> 
                 <img src="chefStart.png" id="chefStart">
                 <div id="chefSpeak">
                 Hello! My name is Chef  Pete. <br> <br>
                 Do you have what it takes to cook at my resturant? 
                 </div>
-                <div class="button" id="accept">
-                Yes!
-                </div>
-                <!-- <p> Pick one </p>
-                <img id="chef_intro" src="chef_intro.png">
+                <div class="button" id="yesButton"> Yes! </div>
+                <div class="button" id="noButton"> No! </div>
+            </div>
+
+            <div id="selectPage">
+                <p> Pick one </p>
                 <div class="skills">
                     <div class="skill" id="portion">
                         <p> Portioning </p>
@@ -47,17 +51,24 @@
                     <div class="skill">
                         <p> Safety </p>
                     </div>
-                </div> -->
+                    <div class="skill">
+                        <p> Timing </p>
+                    </div>
+                    <div class="skill">
+                        <p> Safety </p>
+                    </div>
+                </div>
             </div>
 
             <div id="portionGame"> 
+                <!-- <div class="backButton"> &larr; Back </div> -->
                 <!-- The Modal -->
                 <div id="myModal" class="modal">
                     <!-- Modal content -->
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <p> You put too much salt! </p>
-                        <img id="chef" src="chef.png">
+                        <img id="angryChef" src="angryChef.png">
                     </div>
                 </div>
                 <p> ( Press space to put some salt ) </p>
@@ -67,12 +78,11 @@
                 <div id="line"> </div>
 
                 <img id="pot" src="pot.png">
-
             </div>
 
             <div id="cuttingLesson">
                 <p> Holding a knife </p>
-                <div class="backButton"> &larr; Back </div>
+                <!-- <div class="backButton"> &larr; Back </div> -->
                 <img id="knife" src="holdingKnife.png">
 
                 <p class="longText"> This is how you hold a knife. </p>
