@@ -374,6 +374,9 @@ svg{
     height: 400px;
 }
 
+#pastaGoodModal .modal-content {
+    background-color: #8CC63F;
+}
 /* The Close Button */
 .close {
     color: #aaa;
@@ -400,16 +403,27 @@ svg{
 	left: 700px;
 }
 
+#tryAgainGoodPasta{
+    margin-left: 0px;
+    left: 400px;
+}
+#takeQuizGoodPasta{
+    margin-left: 0px;
+    left: 700px;
+}
+
 /*done game*/
 #doneGameEating{
-	position: absolute;
-	top: 0px;
-	left: 500px;
+    position: absolute;
+    top: 121px;
+    right: 280px;
+    width: 350px;
 }
 #doneGameGood{
-	position: absolute;
-	top: 100px;
-	left: 200px;
+    position: absolute;
+    top: 175px;
+    left: 343px;
+    width: 200px;
 }
 
 #chickenPan{
@@ -452,3 +466,11 @@ svg{
 	border: white;
 	border-width: 5px;
 }*/
+
+
+#potSpaghetti {
+    position: absolute;
+    width: 400px;
+    left: 400px;
+    top: 150px;
+}
