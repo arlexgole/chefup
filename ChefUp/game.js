@@ -6,6 +6,7 @@ var key = false;
 var portionUpdate = "";
 var handUpdate = "";
 var cookUpdate = "";
+var doneUpdate = "";
 var onionClick = 0;
 sessionStorage.portionGameScore = 0;
 sessionStorage.timeGameScore = 0;
@@ -25,6 +26,7 @@ $(document).ready(function(){
 	// start page
 	// var playPage = $('#playPage')
 	var playPage = document.getElementById('playPage');
+
 	// player clicks play
 	play.onclick = function() {
 		console.log("play");
@@ -36,6 +38,7 @@ $(document).ready(function(){
 
 	var yes = document.getElementById('yesButton');
 	var selectPage = document.getElementById('selectPage');
+
 	// player clicks Yes
 	yes.onclick = function() {
 	    playPage.style.visibility = "hidden";
@@ -80,10 +83,13 @@ $(document).ready(function(){
 
 	// Get the modal
 	var modal = document.getElementById('myModal');
+	var modalPastaGood = document.getElementById('pastaGoodModal')
 	var tryAgain = document.getElementById('tryAgain');
+	var tryAgainGoodPasta = document.getElementById('tryAgainGoodPasta');
 	var takeQuiz = document.getElementById('takeQuiz');
 	var line = document.getElementById('line');
 	var handImg = document.getElementById('cuttingHand');
+
 	tryAgain.onclick = function() {
 	    if (mode == "portionGame"){
 	    	console.log("portionGame try again");
@@ -102,8 +108,18 @@ $(document).ready(function(){
 			modal.style.display = "none";
 			resetMeat();
 	    }
+	}
+
+	tryAgainGoodPasta.onclick = function () {
+		pastaGoodModal.style.display = "none";
+		var doneGameEating = document.getElementById("doneGameEating");
+		var doneGameGood = document.getElementById("doneGameGood");
+		doneGameEating.src = "img/mouthOpen.svg"
+		doneGameGood.src = ""
 
 	}
+
+
 	takeQuiz.onclick = function(){
 		if (mode == "portionGame"){
 			modal.style.display = "none";
@@ -219,7 +235,6 @@ $(document).ready(function(){
 	    hideAll();
 	    doneLesson.style.visibility = "visible";
 	    backButton.style.visibility = "visible";
-	    setTimeout(eating, 1000);
 	    mode = "doneLesson";
 	    console.log(mode);
 	}
@@ -240,12 +255,6 @@ $(document).ready(function(){
 
 
 
-	function eating(){
-		var doneGameEating = document.getElementById("doneGameEating");
-		var doneGameGood = document.getElementById("doneGameGood");
-		doneGameEating.src = "img/mouthClose.png"
-		doneGameGood.src = "img/pastaGood.png"
-	}
 	
 	// contiue from portion lesson
 	conPortionLesson.onclick = function() {
@@ -271,6 +280,7 @@ $(document).ready(function(){
 	    hideAll();
 	    doneGame.style.visibility = "visible";
 	    mode = "doneGame";
+	    doneUpdate = setInterval(checkDoneness, 100);
 	    console.log(mode);
 	}
 	conTimeLesson.onclick = function() {
@@ -336,7 +346,7 @@ $(document).ready(function(){
 			clearInterval(cookUpdate);
 			portionFeedback.innerHTML = "The meat is still raw!";
 			modal.style.display = "block";
-			portionFeedbackChef.src = "angryChef.png"
+			portionFeedbackChef.src = "img/angryChef.png"
 		}
 		else { 
 			meat5Level = "clicked";
@@ -474,6 +484,10 @@ function checkUpdates(){
 	if (mode != "timeGame"){
 		clearInterval(cookUpdate);
 	}
+
+	if (mode != "doneGame"){
+		clearInterval(doneUpdate);
+	}
 }
 
 function createBar(){
@@ -548,4 +562,28 @@ function moveHand(){
 	// setTimeout(down, milliseconds)
 }
 
+function eating1(){
+	var doneGameEating = document.getElementById("doneGameEating");
+	var doneGameGood = document.getElementById("doneGameGood");
+	doneGameEating.src = "img/mouthMid.svg"
+	setTimeout(eating2, 300);
+}
+
+function eating2(){
+	var doneGameEating = document.getElementById("doneGameEating");
+	var doneGameGood = document.getElementById("doneGameGood");
+	doneGameEating.src = "img/mouthClose.svg"
+	doneGameGood.src = "img/pastaGood.svg"
+}
+
+function checkDoneness(){
+	var potSpaghetti1 = document.getElementById('potSpaghetti');
+	var modal = document.getElementById('pastaGoodModal');
+
+	potSpaghetti1.onclick = function () {
+		modal.style.display = "block";
+	    setTimeout(eating1, 300);
+
+	}
+}
 
