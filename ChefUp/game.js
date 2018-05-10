@@ -6,10 +6,13 @@ var key = false;
 var portionUpdate = "";
 var handUpdate = "";
 var cookUpdate = "";
+var cookUpdate1 = "";
 var doneUpdate = "";
 var onionClick = 0;
+var mixLevel = "one";
 sessionStorage.portionGameScore = 0;
-sessionStorage.timeGameScore = 0;
+sessionStorage.timeGameScore = "";
+
 
 var hand = "closed";
 var cuttingPressed = false;
@@ -73,6 +76,10 @@ $(document).ready(function(){
 		mixLesson.style.visibility = "hidden";
 		mixGame.style.visibility = "hidden";
 		mixQuiz.style.visibility = "hidden";
+		onions.style.visibility = "hidden";
+		chick.style.visibility = "hidden";
+		sauce.style.visibility = "hidden";
+
 		// show select page
 		selectPage.style.visibility = "visible";
 		backButton.style.visibility = "hidden";
@@ -106,7 +113,16 @@ $(document).ready(function(){
 	    }
 	    if (mode == "timeGame"){
 			modal.style.display = "none";
-			resetMeat();
+			cookUpdate = setTimeout(cookMeats, 1000);
+	    	cookUpdate1 = setTimeout(cookMeats, 1500);
+	    }
+	    if (mode == "mixGame"){
+	    	modal.style.display = "none";
+	    	mixLevel = "one";
+	    	mixImg.src = "potEmpty.png";
+	    	chick.style.visibility = "visible";
+	    	onions.style.visibility = "visible";
+	    	sauce.style.visibility = "visible";
 	    }
 	}
 
@@ -136,6 +152,18 @@ $(document).ready(function(){
 	    	handImg.src = "handClosed.png";
 	    	cuttingGame1.style.visibility = "hidden";
 	    	cuttingQuiz.style.visibility = "visible";
+		}
+
+		if (mode == "timeGame"){
+			modal.style.display = "none";
+	    	resetMeat();
+	    	timeGame.style.visibility = "hidden";
+	    	timeQuiz.style.visibility = "visible";
+		}
+		if (mode == "mixGame"){
+			modal.style.display = "none";
+			mixGame.style.visibility = "hidden";
+	    	mixQuiz.style.visibility = "visible";
 		}
 	}
 
@@ -176,15 +204,15 @@ $(document).ready(function(){
 	var cuttingQuiz2 = document.getElementById("cuttingQuiz2");
 	var cuttingQuiz2A = document.getElementById("cuttingQuiz2A");
 
-	// var timeQuiz1 = document.getElementById("timeQuiz1");
-	// var timeQuiz1A = document.getElementById("timeQuiz1A");
-	// var timeQuiz2 = document.getElementById("timeQuiz2");
-	// var timeQuiz2A = document.getElementById("timeQuiz2A");
+	var timeQuiz1 = document.getElementById("timeQuiz1");
+	var timeQuiz1A = document.getElementById("timeQuiz1A");
+	var timeQuiz2 = document.getElementById("timeQuiz2");
+	var timeQuiz2A = document.getElementById("timeQuiz2A");
 
-	// var mixQuiz1 = document.getElementById("mixQuiz1");
-	// var mixQuiz1A = document.getElementById("mixQuiz1A");
-	// var mixQuiz2 = document.getElementById("mixQuiz2");
-	// var mixQuiz2A = document.getElementById("mixQuiz2A");
+	var mixQuiz1 = document.getElementById("mixQuiz1");
+	var mixQuiz1A = document.getElementById("mixQuiz1A");
+	var mixQuiz2 = document.getElementById("mixQuiz2");
+	var mixQuiz2A = document.getElementById("mixQuiz2A");
 
 
 	portionQuiz1.onclick = function() {
@@ -203,7 +231,22 @@ $(document).ready(function(){
 		console.log("here");
 		cuttingQuiz2A.style.display = "block";
 	}
-
+	timeQuiz1.onclick = function() {
+		console.log("here");
+		timeQuiz1A.style.display = "block";
+	}
+	timeQuiz2.onclick = function() {
+		console.log("here");
+		timeQuiz2A.style.display = "block";
+	}
+	mixQuiz1.onclick = function() {
+		console.log("here");
+		mixQuiz1A.style.display = "block";
+	}
+	mixQuiz2.onclick = function() {
+		console.log("here");
+		mixQuiz2A.style.display = "block";
+	}
 
 	// onion
 	var onion = document.getElementById("onion");
@@ -287,14 +330,73 @@ $(document).ready(function(){
 	    hideAll();
 	    timeGame.style.visibility = "visible";
 	    mode = "timeGame";
-	    cookUpdate = setInterval(cookMeats, 1000);
+	    cookUpdate = setTimeout(cookMeats, 1000);
+	    cookUpdate1 = setTimeout(cookMeats, 1500);
 	    console.log(mode);
 	}
 	conMixLesson.onclick = function() {
 	    hideAll();
 	    mixGame.style.visibility = "visible";
 	    mode = "mixGame";
+	    mixLevel = "one";
+	    onions.style.visibility = "visible";
+	    chick.style.visibility = "visible";
+	    sauce.style.visibility = "visible";
+	    mixImg.src = "potEmpty.png";
 	    console.log(mode);
+	}
+
+	var mixImg = document.getElementById("potEmpty");
+	var onions = document.getElementById("onions");
+	var chick = document.getElementById("chick");
+	var sauce = document.getElementById("sauce");
+	var mixText = document.getElementById("mixText");
+
+	// mixing game
+	chick.onclick = function() {
+		if (mixLevel == "one"){
+			chick.style.visibility = "hidden";
+			mixImg.src = "potChic.png";
+			mixLevel = "two";
+			mixText.innerHTML = "2. Get the onions"
+		}
+		else{
+			console.log("you lost");
+		}
+	}
+	onions.onclick = function() {
+		if (mixLevel == "two"){
+			onions.style.visibility = "hidden";
+			mixImg.src = "potChicOnion.png";
+			mixLevel = "three";
+			mixText.innerHTML = "3. Pour the sauce"
+		}
+		else{
+			console.log("you lost mix game");
+		}
+	}
+	sauce.onclick = function() {
+		if (mixLevel == "three"){
+			sauce.style.visibility = "hidden";
+			mixImg.src = "potUnmix.png";
+			mixLevel = "four";
+			mixText.innerHTML = "4. Click the pot and mix"
+		}
+		else{
+			console.log("you lost mix game");
+		}
+	}
+	mixImg.onclick = function() {
+		if (mixLevel == "four"){
+			mixImg.src = "potMix.png";
+			portionFeedback.innerHTML = "Good job mixing!";
+			modal.style.display = "block";
+			portionFeedbackChef.src = "img/happyChef.png"
+
+		}
+		else{
+			console.log("you lost");
+		}
 	}
 
 	// cuttingGame onion
@@ -328,7 +430,8 @@ $(document).ready(function(){
 
 	function resetMeat() {
 		console.log("reset");
-		clearInterval(cookUpdate);
+		clearTimeout(cookUpdate);
+		clearTimeout(cookUpdate1);
 		meat1Level = "raw";
 		meat2Level = "raw";
 		meat3Level = "raw";
@@ -339,6 +442,11 @@ $(document).ready(function(){
 		meat3.src = "3raw.png";
 		meat4.src = "4raw.png";
 		meat5.src = "5raw.png";
+		meat5.style.left = "470px";
+		meat4.style.left = "600px";
+		meat3.style.left = "630px";
+		meat2.style.left = "630px";
+		meat1.style.left = "470px";
 	}
 
 	meat5.onclick = function() {
@@ -350,30 +458,95 @@ $(document).ready(function(){
 		}
 		else { 
 			meat5Level = "clicked";
-			sessionStorage.timeGameScore = 1; 
+			sessionStorage.timeGameScore = +1; 
 			meat5.style.left = "100px";
 			console.log("score");
 		}		
 	}
-	
+
+	meat4.onclick = function() {
+		if (meat4Level == "raw"){
+			clearInterval(cookUpdate);
+			portionFeedback.innerHTML = "The meat is still raw!";
+			modal.style.display = "block";
+			portionFeedbackChef.src = "img/angryChef.png"
+		}
+		else { 
+			meat4Level = "clicked";
+			sessionStorage.timeGameScore += 1; 
+			meat4.style.left = "110px";
+			// console.log(sessionStorage.timeGameScore);
+		}		
+	}
+
+	meat3.onclick = function() {
+		if (meat3Level == "raw"){
+			clearInterval(cookUpdate);
+			portionFeedback.innerHTML = "The meat is still raw!";
+			modal.style.display = "block";
+			portionFeedbackChef.src = "img/angryChef.png"
+		}
+		else { 
+			meat3Level = "clicked";
+			sessionStorage.timeGameScore += 1; 
+			meat3.style.left = "120px";
+		}		
+	}
+
+	meat2.onclick = function() {
+		if (meat2Level == "raw"){
+			clearInterval(cookUpdate);
+			portionFeedback.innerHTML = "The meat is still raw!";
+			modal.style.display = "block";
+			portionFeedbackChef.src = "img/angryChef.png"
+		}
+		else { 
+			meat2Level = "clicked";
+			sessionStorage.timeGameScore += 1; 
+			meat2.style.left = "130px";
+		}		
+	}
+
+	meat1.onclick = function() {
+		if (meat1Level == "raw"){
+			clearInterval(cookUpdate);
+			portionFeedback.innerHTML = "The meat is still raw!";
+			modal.style.display = "block";
+			portionFeedbackChef.src = "img/angryChef.png"
+		}
+		else { 
+			meat1Level = "clicked";
+			sessionStorage.timeGameScore += 1; 
+			meat1.style.left = "100px";
+			portionFeedback.innerHTML = "Great job! This is nicely cooked!";
+			modal.style.display = "block";
+			portionFeedbackChef.src = "img/happyChef.png"
+			resetMeat();	
+		}		
+	}
+
+
 	// timing game
 	function cookMeats(){
-		setTimeout(cookMeat1, 1700);
-		setTimeout(cookMeat2, 1400);
-		setTimeout(cookMeat3, 1100);
-		setTimeout(cookMeat4, 800);
+		setTimeout(cookMeat1, 2600);
+		setTimeout(cookMeat2, 2100);
+		setTimeout(cookMeat3, 1500);
+		setTimeout(cookMeat4, 900);
 		setTimeout(cookMeat5, 500);
 		function cookMeat1(){
-			if (meat1Level == "raw"){
-				meat1.src = "1done.png";
-				meat1Level = "done";
-			}
-			else if (meat1Level == "done"){
-				meat1.src = "1burnt.png";
-				meat1Level = "burnt";
-			}
-			else{
-				console.log("you lose")
+			if (meat1Level != "clicked"){
+				if (meat1Level == "raw"){
+					meat1.src = "1done.png";
+					meat1Level = "done";
+				}
+				else if (meat1Level == "done"){
+					meat1.src = "1burnt.png";
+					meat1Level = "burnt";
+					portionFeedback.innerHTML = "The meat is burnt!";
+					modal.style.display = "block";
+					portionFeedbackChef.src = "img/angryChef.png"
+					resetMeat();
+				}
 			}
 		}
 		function cookMeat2(){
@@ -389,43 +562,68 @@ $(document).ready(function(){
 				console.log("you lose")
 			}
 		}
+		function cookMeat2(){
+			if (meat2Level != "clicked"){
+				if (meat2Level == "raw"){
+					meat2.src = "2done.png";
+					meat2Level = "done";
+				}
+				else if (meat2Level == "done"){
+					meat2.src = "2burnt.png";
+					meat2Level = "burnt";
+					portionFeedback.innerHTML = "The meat is burnt!";
+					modal.style.display = "block";
+					portionFeedbackChef.src = "img/angryChef.png"
+					resetMeat();
+				}
+			}
+		}
 		function cookMeat3(){
-			if (meat3Level == "raw"){
-				meat3.src = "3done.png";
-				meat3Level = "done";
-			}
-			else if (meat3Level == "done"){
-				meat3.src = "3burnt.png";
-				meat3Level = "burnt";
-			}
-			else{
-				console.log("you lose")
+			if (meat3Level != "clicked"){
+				if (meat3Level == "raw"){
+					meat3.src = "3done.png";
+					meat3Level = "done";
+				}
+				else if (meat3Level == "done"){
+					meat3.src = "3burnt.png";
+					meat3Level = "burnt";
+					portionFeedback.innerHTML = "The meat is burnt!";
+					modal.style.display = "block";
+					portionFeedbackChef.src = "img/angryChef.png"
+					resetMeat();
+				}
 			}
 		}
 		function cookMeat4(){
-			if (meat4Level == "raw"){
-				meat4.src = "4done.png";
-				meat4Level = "done";
-			}
-			else if (meat4Level == "done"){
-				meat4.src = "4burnt.png";
-				meat4Level = "burnt";
-			}
-			else{
-				console.log("you lose")
+			if (meat4Level != "clicked"){
+				if (meat4Level == "raw"){
+					meat4.src = "4done.png";
+					meat4Level = "done";
+				}
+				else if (meat4Level == "done"){
+					meat4.src = "4burnt.png";
+					meat4Level = "burnt";
+					portionFeedback.innerHTML = "The meat is burnt!";
+					modal.style.display = "block";
+					portionFeedbackChef.src = "img/angryChef.png"
+					resetMeat();
+				}
 			}
 		}
 		function cookMeat5(){
-			if (meat5Level == "raw"){
-				meat5.src = "5done.png";
-				meat5Level = "done";
-			}
-			else if (meat5Level == "done"){
-				meat5.src = "5burnt.png";
-				meat5Level = "burnt";
-			}
-			else{
-				console.log("you lose");
+			if (meat5Level != "clicked"){
+				if (meat5Level == "raw"){
+					meat5.src = "5done.png";
+					meat5Level = "done";
+				}
+				else if (meat5Level == "done"){
+					meat5.src = "5burnt.png";
+					meat5Level = "burnt";
+					portionFeedback.innerHTML = "The meat is burnt!";
+					modal.style.display = "block";
+					portionFeedbackChef.src = "img/angryChef.png"
+					resetMeat();
+				}
 			}
 		}
 	}
@@ -451,7 +649,6 @@ function startGame() {
 		if (mode == "portionGame"){
     		key = e.keyCode;
     		pressed = true; 
-    		console.log('true');
     	}
     	if (mode == "cuttingGame1"){
     		cuttingPressed = true;
@@ -462,7 +659,6 @@ function startGame() {
 		if (mode == "portionGame"){
 			// stopped pressing space  
 			if (key == 32){
-				console.log('keyup');
 		   		pressed = false;
 		   		completed = true;
 		    }
