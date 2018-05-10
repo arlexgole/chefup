@@ -36,7 +36,6 @@
                     <img src="img/bg1-01.png" class="decorBg"> 
                     <div class="button" id="playButton"> Play </div>
                     <div class="button" id="aboutButton"> About </div>
-
                 </div>
                 <div id="whiteSection">
                     <h1> ChefUp: Let's learn to Cook! </h1>
@@ -55,12 +54,13 @@
             </div>
 
             <div id="selectPage">
+
                 <p> Before you can be a real chef, you have to learn the skills. <br> What do you want to learn? </p>
                 <img src="img/chefStart.svg" id="chefStart">
 
                 <div class="skills">
                     <div class="skill" id="portion">
-                        <p> Portioning </p>
+                        <p> Seasoning </p>
                     </div>
                     <div class="skill" id="cutting">
                         <p> Cutting </p>
@@ -68,36 +68,48 @@
                     <div class="skill" id="done?">
                         <p> Doneness </p>
                     </div>
-                    <div class="skill">
+                    <div class="skill" id="timing">
                         <p> Timing </p>
                     </div>
-                    <div class="skill">
-                        <p> Safety </p>
+                    <div class="skill" id="mixing">
+                        <p> Mixing </p>
                     </div>
                 </div>
             </div>
 
             <div id="portionLesson"> 
-                <p> portion lesson</p>
+                <p> </p>
+                <img src="season.png"> 
+                <p class="longText"> Learning how to season properly means that the flavor of your dish can be heightened with components like salt, acidity, bitterness, etc. </p>
+
+                <p class="longText"> Professional chefs often say that the biggest difference between home cooks and chefs is seasoning. </p>
+
+                <p class="longText"> However, seasoning properly, though it takes some practice, isn't all that hard. Once you learn a few tricks to getting salt, acidity and savoury in balance, you'll be seasoning like a pro. </p>
+
                 <div class="conButton" id="conPortionLesson"> Continue </div>
             </div>
 
             <div id="portionGame"> 
                 <p> ( Press space to put some salt ) </p>
-                
                 <div id="bar"> </div>
                 <div id="green"> </div>
                 <div id="line"> </div>
 
                 <img id="pot" src="img/pot.png">
+                <img id="salt" src="salt.png">
             </div>
 
             <div id="portionQuiz"> 
                 <p> Take this quiz </p>
-                <img id="pot" src="img/pot.png">
+
+                <div class="card" id="portionQuiz1"> Does It Need More Spices? &darr;
+                    <p class="hidden" id="portionQuiz1A"> The amounts of spices given in a recipe are usually just a guideline. 
+                    You may want more or less depending on the freshness and quality of your spices, and on your personal taste. </p>
+                </div> 
+                <div class="card" id="portionQuiz2"> Does It Need Some Acidity &darr;
+                    <p class="hidden" id="portionQuiz2A"> If the flavors still don't shine after we've already added salt and adjusted the spices, the next option is to add a bit of acid. Lemon juice is our top choice, but another citruses, vinegar, wine, or a splash of hot sauce are also work well. </p>
+                </div> 
             </div>
-
-
 
 
             <div id="cuttingLesson">
@@ -110,35 +122,40 @@
 
                 <div class="conButton" id="conCuttingLesson"> Continue </div>
             </div>
-
-
             <div id="cuttingGame"> 
                 <p> Use your mouse to cut. </p>
                 <img id="cuttingBoard" src="img/cuttingBoard.png" draggable="False">
                 <img id="onion" src="img/onion.png" draggable="False">
             
-                <p class="longText"> Before you start chopping anything, you want to make sure you're holding the knife correctly. </p>
+                <p class="longText"> Remember, before you start chopping anything, you want to make sure you're holding the knife correctly. </p>
 
                 <div class="conButton" id="conCuttingGame"> Continue </div>
             </div>
-
             <div id="cuttingGame1"> 
                 <p> Use your mouse to cut. </p>
                 <img id="meat" src="img/meat.png">
                 <img id="cuttingHand" src="img/handClosed.svg">
                 <img id="handKnife" src="img/handKnife.svg">
             </div>
+            <div id="cuttingQuiz"> 
+                <p> Take this quiz </p>
+                <div class="card" id="cuttingQuiz1"> What is the ideal position for the helping hand? &darr;
+                    <p class="hidden" id="cuttingQuiz1A"> The ideal position for the helping hand is called the bear claw, with the fingertips curled under and knuckles pressing down on the ingredient to keep it from rolling or sliding. </p>
+                </div> 
+                <div class="card" id="cuttingQuiz2"> Should the hand holding the knife should be gripping the blade as well as the handle? &darr;
+                    <p class="hidden" id="cuttingQuiz2A"> Yes! The palm of the hand chokes up on the handle, while the thumb and index finger grip the top of the blade. </p>
+                </div> 
+            </div>
+
 
 
 
             <div id="doneLesson"> 
-                <p> Knowing food is prepared </p>
-                <img id="knife" src="img/holdingKnife.png">
-
-                <p class="longText"> This is how you prepare </p>
-                <p class="longText"> Before you start chopping anything, you want to make sure you're holding the knife correctly. </p>
-                <p class="longText"> This means putting your finger and your thumb at the very back of the knife and wrapping your fingers around the handle. </p>
-
+                <img id="ready" src="ready.png">
+                <p class="longText"> It’s essential to know when something is cooked, otherwise the texture and flavor will stop your dish in its tracks. </p>
+                <p class="longText"> Chicken and Pork: They will have a harder texture and there will no pink color left. Generally, about 6 minutes per side, depending on thickness. Be sure to check by either using a thermometer or cutting into the thickest part. </p>
+                <p class="longText"> Pasta: Scoop out a piece and take a bite. If you still see a white ring in spaghetti or if the pasta itself still is white and crunchy, it is not ready. Always check the box for cook times. </p>
+                <p class="longText"> Fish: Depends but when a thin knife inserted into the fish meets no resistance, your fish is likely done. </p>
                 <div class="conButton" id="conDoneLesson"> Continue </div>
             </div>
 
@@ -147,5 +164,58 @@
                 <img src="img/" id="doneGameGood">
                 <div class="conButton" id="conDoneGame"> Continue </div>
             </div>
+
+            <div id="doneQuiz"> 
+                <p> c quiz</p>
+            </div>
+
+
+
+            <div id="timeLesson"> 
+                <img src="time.png" id="time">
+                <p class="longText"> Even if you are cooking something simple, managing your time efficiently is a key skill to have while cooking.</p>
+                <p class="longText"> Combine tasks when you can. For example, you may be able to saute vegetables and make some rice at the same time.  </p>
+                <p class="longText">  If you have to cook many things at once, especially very time-sensitive items like meat or even for vegetables, set timers so that you don’t forget about something. </p>
+                <div class="conButton" id="conTimeLesson"> Continue </div>
+            </div>
+
+            <div id="timeGame"> 
+                <p> Click the meat when it is done </p>
+             <!--    <img src ="chickenPan.png" id="chickenPan"> 
+                <img src="1raw.png" class="meat" id="meat1">
+                <img src="2raw.png" class="meat" id="meat2">
+                <img src="3raw.png" class="meat" id="meat3">
+                <img src="4raw.png" class="meat" d="meat4">
+                <img src="5raw.png" class="meat" d="meat5"> -->
+                <img src ="chickenPan.png" id="chickenPan"> 
+                <img src="1raw.png" id="meat1">
+                <img src="2raw.png" id="meat2">
+                <img src="3raw.png" id="meat3">
+                <img src="4raw.png" id="meat4">
+                <img src="5raw.png" id="meat5">
+                <!-- <div class="conButton" id="conTimeGame"> Continue </div> -->
+            </div>
+
+            <div id="timeQuiz"> 
+                <p> c quiz</p>
+            </div>
+
+
+
+            <div id="mixLesson"> 
+                <p> Mixing </p>
+                <p class="longText"> asdsadsadasdasdasdasd </p>
+                <div class="conButton" id="conMixLesson"> Continue </div>
+            </div>
+
+            <div id="mixGame"> 
+                <p> gameeee </p>
+                <<!-- div class="conButton" id="conTimeGame"> Continue </div> -->
+            </div>
+
+            <div id="mixQuiz"> 
+                <p> c quiz</p>
+            </div>
+
     </body>
 </html>
