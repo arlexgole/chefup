@@ -28,7 +28,16 @@ body{
 }
 
 /*portion game screen*/
-#playPage, #selectPage, #portionGame, #cuttingLesson, #cuttingGame{
+#playPage, #selectPage, #portionLesson, #portionGame, #portionQuiz, #cuttingLesson, #cuttingGame, #cuttingGame1{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	height: 600px;
+	width: 1200px;
+	visibility: hidden;
+	padding-bottom: 0px;
+}
+#doneLesson, #doneGame{
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
@@ -41,7 +50,9 @@ body{
 #playPage{
 	background-color: #ff6b6b;
 }
-
+#cuttingGame1{
+	background-color: #D3D3D3;
+}
 /*introPage*/
 #whiteSection{
 	position: absolute;
@@ -167,7 +178,25 @@ p{
     font-size: 14px;
     cursor: pointer;
     border-radius: 5px;
+    z-index: 1;
     visibility: hidden;
+}
+.conButton{
+	width: 70px;
+	position: absolute;
+	top: 450px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 535px;
+}
+#conCuttingGame{
+	visibility: hidden;
 }
 
 /*the different skills*/
@@ -216,9 +245,14 @@ svg{
 	margin-top: 10px;
 }
 
-#angryChef{
-	float: left;
-	margin-top: -75px;
+#portionFeedbackChef{
+	position: absolute;
+	top: 200px;
+	left: 520px;
+}
+#portionFeedback{
+	text-align: center;
+	font-size: 20px;
 }
 
 #bar{
@@ -248,6 +282,23 @@ svg{
 	left: 301px;
 }
 
+/*cutting game*/
+#cuttingHand{
+	position: absolute;
+	margin: 0px;
+	left: 50px;
+	top: 100px;
+}
+#meat{
+	position: absolute;
+	top: 160px;
+	left: 680px;
+}
+#handKnife{
+	position: absolute;
+	top: 80px;
+	left: 780px;
+}
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -255,12 +306,12 @@ svg{
     position: absolute;
     margin-left: auto;
 	margin-right: auto;
-	margin-top: -68px;
+	margin-top: 1px;
 	width: 1200px;
     height: 600px; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -269,15 +320,17 @@ svg{
     margin: 10% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
-    height: 200px;
+    width: 600px; /* Could be more or less, depending on screen size */
+    height: 400px;
 }
 
 /* The Close Button */
 .close {
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    position: absolute;
+    top: 100px;
+    left: 870px;
+    font-size: 58px;
     font-weight: bold;
 }
 
@@ -287,3 +340,25 @@ svg{
     text-decoration: none;
     cursor: pointer;
 }
+
+#tryAgain{
+	margin-left: 0px;
+	left: 400px;
+}
+#takeQuiz{
+	margin-left: 0px;
+	left: 700px;
+}
+
+/*done game*/
+#doneGameEating{
+	position: absolute;
+	top: 0px;
+	left: 500px;
+}
+#doneGameGood{
+	position: absolute;
+	top: 100px;
+	left: 200px;
+}
+

@@ -16,6 +16,20 @@
     <body>
         <div id="container">
             <div id="backButton"> &larr; Back </div>
+
+             <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <!-- <span class="close">&times;</span> -->
+                        <p id="portionFeedback"> You put too much salt! </p>
+                        <img id="portionFeedbackChef" src="angryChef.png">
+                        <div class="button" id="tryAgain"> Try Aagain </div>
+                        <div class="button" id="takeQuiz"> Take Quiz </div>
+                    </div>
+                </div>
+
+
             <div id="introPage"> 
                 <div id="whiteSection">
                     <h1> ChefUp: Learn to Cook </h1> 
@@ -48,8 +62,8 @@
                     <div class="skill" id="cutting">
                         <p> Cutting </p>
                     </div>
-                    <div class="skill">
-                        <p> Safety </p>
+                    <div class="skill" id="done?">
+                        <p> Is the food done? </p>
                     </div>
                     <div class="skill">
                         <p> Timing </p>
@@ -60,17 +74,12 @@
                 </div>
             </div>
 
+            <div id="portionLesson"> 
+                <p> portion lesson</p>
+                <div class="conButton" id="conPortionLesson"> Continue </div>
+            </div>
+
             <div id="portionGame"> 
-                <!-- <div class="backButton"> &larr; Back </div> -->
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                    <!-- Modal content -->
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <p> You put too much salt! </p>
-                        <img id="angryChef" src="angryChef.png">
-                    </div>
-                </div>
                 <p> ( Press space to put some salt ) </p>
                 
                 <div id="bar"> </div>
@@ -80,16 +89,23 @@
                 <img id="pot" src="pot.png">
             </div>
 
+            <div id="portionQuiz"> 
+                <p> Take this quiz </p>
+                <img id="pot" src="pot.png">
+            </div>
+
+
+
+
             <div id="cuttingLesson">
                 <p> Holding a knife </p>
-                <!-- <div class="backButton"> &larr; Back </div> -->
                 <img id="knife" src="holdingKnife.png">
 
                 <p class="longText"> This is how you hold a knife. </p>
                 <p class="longText"> Before you start chopping anything, you want to make sure you're holding the knife correctly. 
                 <p class="longText"> This means putting your finger and your thumb at the very back of the knife and wrapping your fingers around the handle. </p>
 
-                <div class="button" id="continue"> Continue </div>
+                <div class="conButton" id="conCuttingLesson"> Continue </div>
             </div>
 
 
@@ -98,9 +114,35 @@
                 <img id="cuttingBoard" src="cuttingBoard.png" draggable="False">
                 <img id="onion" src="onion.png" draggable="False">
             
-                <p class="longText"> Before you start chopping anything, you want to make sure you're holding the knife correctly. 
+                <p class="longText"> Before you start chopping anything, you want to make sure you're holding the knife correctly. </p>
 
-                <div class="button"> Continue </div>
+                <div class="conButton" id="conCuttingGame"> Continue </div>
+            </div>
+
+            <div id="cuttingGame1"> 
+                <p> Use your mouse to cut. </p>
+                <img id="meat" src="meat.png">
+                <img id="cuttingHand" src="handClosed.png">
+                <img id="handKnife" src="handKnife.png">
+            </div>
+
+
+
+            <div id="doneLesson"> 
+                <p> Knowing food is prepared </p>
+                <img id="knife" src="holdingKnife.png">
+
+                <p class="longText"> This is how you prepare </p>
+                <p class="longText"> Before you start chopping anything, you want to make sure you're holding the knife correctly. </p>
+                <p class="longText"> This means putting your finger and your thumb at the very back of the knife and wrapping your fingers around the handle. </p>
+
+                <div class="conButton" id="conDoneLesson"> Continue </div>
+            </div>
+
+            <div id="doneGame"> 
+                <img src="mouthOpen.png" id="doneGameEating">
+                <img src="" id="doneGameGood">
+                <div class="conButton" id="conDoneGame"> Continue </div>
             </div>
     </body>
 </html>
