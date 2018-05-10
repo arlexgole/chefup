@@ -426,45 +426,70 @@ svg{
 }
 
 #chickenPan{
-	position: absolute;
-	left: 400px;
-	top: 80px;
-    width: 439px;
+    position: absolute;
+    left: 400px;
+    top: 80px;
 }
 #meat1{
-	position: absolute;
-	top: 150px;
-	left: 470px;
+    position: absolute;
+    top: 150px;
+    left: 470px;
 }
 #meat2{
-	position: absolute;
-	top: 270px;
-	left: 630px;
+    position: absolute;
+    top: 270px;
+    left: 630px;
 }
 #meat3{
-	position: absolute;
-	top: 150px;
-	left: 630px;
+    position: absolute;
+    top: 150px;
+    left: 630px;
 }
 #meat4{
-	position: absolute;
-	top: 390px;
-	left: 600px;
+    position: absolute;
+    top: 390px;
+    left: 600px;
 }
 #meat5{
-	position: absolute;
-	top: 350px;
-	left: 520px;
+    position: absolute;
+    top: 350px;
+    left: 520px;
 }
-#meat1:hover, #meat2:hover, #meat3:hover, #meat4:hover, #meat5:hover{
-	border-style: solid;
-	border-color: white;
-	border-width: 1px;
+#meat1:hover, #meat2:hover, #meat3:hover, #meat4:hover, #meat5:hover, #chick:hover, #onions:hover, #sauce:hover{
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    cursor: pointer;
 }
+#potEmpty{
+    position: absolute;
+    left: 200px;
+    top: 70px;
+}
+#chick{
+    position: absolute;
+    left: 850px;
+    top: 60px
+}
+#onions{
+    position: absolute;
+    left: 850px;
+    top: 240px
+}
+#sauce{
+    position: absolute;
+    left: 850px;
+    top: 400px
+}
+#mix:hover{
+    cursor: pointer;
+}
+
 /*.meat:hover{
-	border: white;
-	border-width: 5px;
+    border: white;
+    border-width: 5px;
 }*/
+
 
 
 #potSpaghetti {
@@ -472,4 +497,5 @@ svg{
     width: 400px;
     left: 400px;
     top: 150px;
+}
 }
