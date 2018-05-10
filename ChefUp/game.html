@@ -23,7 +23,7 @@
                     <div class="modal-content">
                         <!-- <span class="close">&times;</span> -->
                         <p id="portionFeedback"> You put too much salt! </p>
-                        <img id="portionFeedbackChef" src="angryChef.png">
+                        <img id="portionFeedbackChef" src="img/angryChef.png">
                         <div class="button" id="tryAgain"> Try Aagain </div>
                         <div class="button" id="takeQuiz"> Take Quiz </div>
                     </div>
@@ -31,21 +31,22 @@
 
 
             <div id="introPage"> 
-                <div id="whiteSection">
-                    <h1> ChefUp: Learn to Cook </h1> 
-                </div>  
+
                 <div id="pinkSection">
-                    <img src="chef.png" id="chefIntro"> 
+                    <img src="img/bg1-01.png" class="decorBg"> 
                     <div class="button" id="playButton"> Play </div>
                     <div class="button" id="aboutButton"> About </div>
                 </div>
-                      
+                <div id="whiteSection">
+                    <h1> ChefUp: Let's learn to Cook! </h1>
+                    <img src="img/smileChef.svg" id="chefIntro"> 
+                </div>            
             </div>
 
             <div id="playPage"> 
-                <img src="chefStart.png" id="chefStart">
+                <img src="img/chefStart.svg" id="chefStart">
                 <div id="chefSpeak">
-                Hello! My name is Chef  Pete. <br> <br>
+                Hello! My name is Chef Pete. <br> <br>
                 Do you have what it takes to cook at my resturant? 
                 </div>
                 <div class="button" id="yesButton"> Yes! </div>
@@ -53,7 +54,10 @@
             </div>
 
             <div id="selectPage">
-                <p> Complete these skills! </p>
+
+                <p> Before you can be a real chef, you have to learn the skills. <br> What do you want to learn? </p>
+                <img src="img/chefStart.svg" id="chefStart">
+
                 <div class="skills">
                     <div class="skill" id="portion">
                         <p> Seasoning </p>
@@ -62,7 +66,7 @@
                         <p> Cutting </p>
                     </div>
                     <div class="skill" id="done?">
-                        <p> Is the food done? </p>
+                        <p> Doneness </p>
                     </div>
                     <div class="skill" id="timing">
                         <p> Timing </p>
@@ -90,12 +94,14 @@
                 <div id="bar"> </div>
                 <div id="green"> </div>
                 <div id="line"> </div>
-                <img id="pot" src="pot.png">
+
+                <img id="pot" src="img/pot.png">
                 <img id="salt" src="salt.png">
             </div>
 
             <div id="portionQuiz"> 
                 <p> Take this quiz </p>
+
                 <div class="card" id="portionQuiz1"> Does It Need More Spices? &darr;
                     <p class="hidden" id="portionQuiz1A"> The amounts of spices given in a recipe are usually just a guideline. 
                     You may want more or less depending on the freshness and quality of your spices, and on your personal taste. </p>
@@ -108,7 +114,7 @@
 
             <div id="cuttingLesson">
                 <p> Holding a knife </p>
-                <img id="knife" src="holdingKnife.png">
+                <img id="knife" src="img/holdingKnife.png">
 
                 <p class="longText"> This is how you hold a knife. </p>
                 <p class="longText"> Before you start chopping anything, you want to make sure you're holding the knife correctly. 
@@ -118,8 +124,8 @@
             </div>
             <div id="cuttingGame"> 
                 <p> Use your mouse to cut. </p>
-                <img id="cuttingBoard" src="cuttingBoard.png" draggable="False">
-                <img id="onion" src="onion.png" draggable="False">
+                <img id="cuttingBoard" src="img/cuttingBoard.png" draggable="False">
+                <img id="onion" src="img/onion.png" draggable="False">
             
                 <p class="longText"> Remember, before you start chopping anything, you want to make sure you're holding the knife correctly. </p>
 
@@ -127,9 +133,9 @@
             </div>
             <div id="cuttingGame1"> 
                 <p> Use your mouse to cut. </p>
-                <img id="meat" src="meat.png">
-                <img id="cuttingHand" src="handClosed.png">
-                <img id="handKnife" src="handKnife.png">
+                <img id="meat" src="img/meat.png">
+                <img id="cuttingHand" src="img/handClosed.svg">
+                <img id="handKnife" src="img/handKnife.svg">
             </div>
             <div id="cuttingQuiz"> 
                 <p> Take this quiz </p>
@@ -154,8 +160,8 @@
             </div>
 
             <div id="doneGame"> 
-                <img src="mouthOpen.png" id="doneGameEating">
-                <img src="" id="doneGameGood">
+                <img src="img/mouthOpen.png" id="doneGameEating">
+                <img src="img/" id="doneGameGood">
                 <div class="conButton" id="conDoneGame"> Continue </div>
             </div>
 
