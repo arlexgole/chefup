@@ -111,10 +111,11 @@ $(document).ready(function(){
 	}
 
 	tryAgainGoodPasta.onclick = function () {
-		var doneGameEating = document.getElementById("doneGameEating");
 		pastaGoodModal.style.display = "none";
+		var doneGameEating = document.getElementById("doneGameEating");
+		var doneGameGood = document.getElementById("doneGameGood");
 		doneGameEating.src = "img/mouthOpen.svg"
-
+		doneGameGood.src = ""
 
 	}
 
