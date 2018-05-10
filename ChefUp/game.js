@@ -346,7 +346,7 @@ $(document).ready(function(){
 			clearInterval(cookUpdate);
 			portionFeedback.innerHTML = "The meat is still raw!";
 			modal.style.display = "block";
-			portionFeedbackChef.src = "angryChef.png"
+			portionFeedbackChef.src = "img/angryChef.png"
 		}
 		else { 
 			meat5Level = "clicked";

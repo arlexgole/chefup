@@ -142,18 +142,18 @@ h1{
     font-family: 'Raleway', sans-serif;
 }
 #yesButton{
-	background-color: white;
-	color: #20bf6b;
+	background-color: #20bf6b;
+	color: white;
 	left: 200px;
 	top: 400px;
 	font-size: 18px;
 }
 #noButton{
-	background-color: white;
-	color: #eb3b5a;
-	left: 200px;
-	top: 480px;
-	font-size: 18px;
+    background-color: gray;
+    color: black;
+    left: 200px;
+    top: 480px;
+    font-size: 18px;
 }
 
 p{
@@ -227,7 +227,7 @@ p{
 	height: 50px;
 	margin-left: 670px;
 	margin-right: auto;
-	margin-top: 30px;
+	margin-top: 17px;
 	padding: 10px 15px;
 	background-color: #fff;
 	border-radius: 5px;
@@ -236,7 +236,6 @@ p{
 }
 
 .skills{
-	margin-top: 40px;
 }
 
 svg{
