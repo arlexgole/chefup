@@ -533,13 +533,13 @@ function moveHand(){
 		console.log(hand);
 		if (hand == "open"){
 			modal.style.display = "block";
-			portionFeedback.innerHTML = "You cut your fingers! Look at your helping hand!";
+			portionFeedback.innerHTML = "You cut your fingers!";
 			portionFeedbackChef.src = "img/angryChef.png"
 			// console.log("you lost");
 		}
 		else {
 			modal.style.display = "block";
-			portionFeedback.innerHTML = "Good job looking at your helping hand!";
+			portionFeedback.innerHTML = "Good job!";
 			portionFeedbackChef.src = "img/happyChef.png";
 			// console.log("you win");
 		}
