@@ -16,35 +16,58 @@ var cuttingPressed = false;
 
 $(document).ready(function(){
 
-
+// SCREEN HANDLING SHIT HERE---------------------------------------------------
 
 	// buttons in the start page
 	var portion = document.getElementById("portion");
 	var cutting = document.getElementById("cutting");
 	var done = document.getElementById("done?");
 
-	// the different screens
-	var portionLesson = document.getElementById("portionLesson");
+	// GAME SCREENS=-----------------------------------------------------------
+	var selectPage = document.getElementById("selectPage");
 	var portionGame = document.getElementById("portionGame");
-	var cuttingLesson = document.getElementById("cuttingLesson");
-	var doneLesson = document.getElementById("doneLesson");
 	var cuttingGame = document.getElementById("cuttingGame");
 	var cuttingGame1 = document.getElementById("cuttingGame1");
 	var doneGame = document.getElementById("doneGame");
+	var playPage = document.getElementById('playPage');
+	var introPage = document.getElementById('introPage');
+	var play = document.getElementById('playButton');
+
+	//DIFFERENT LESSONS--------------------------------------------------------
+	var cuttingLesson = document.getElementById("cuttingLesson");
+	var doneLesson = document.getElementById("doneLesson");
+	var portionLesson = document.getElementById("portionLesson");
+
+	// different continue BUTTONs+++===========================================
+	var conPortionLesson = document.getElementById("conPortionLesson");
+	var conCuttingLesson = document.getElementById("conCuttingLesson");
+	var conCuttingGame = document.getElementById("conCuttingGame");
+	var conDoneLesson = document.getElementById("conDoneLesson");
 
 
-	var game_screens = [portionLesson,
+	// DIFFERENT OBJECTS ----------------------------------------------------
+	var onion = document.getElementById("onion");
+
+
+	var screens = [selectPage,
+	               portionLesson,
 				   portionGame,
 				   cuttingLesson,
 				   doneLesson,
 				   cuttingGame,
 				   cuttingGame1,
-				   doneGame
+				   doneGame,
+				   playPage,
+				   introPage,
+				   onion,
+				   play,
+				   conPortionLesson,
+				   conCuttingLesson,
+				   conCuttingGame,
+				   conDoneLesson
 				   ];
 
 
-	// onion
-	var onion = document.getElementById("onion");
 
 	// different continue
 	var conPortionLesson = document.getElementById("conPortionLesson");
@@ -54,16 +77,48 @@ $(document).ready(function(){
 
 
 
-
 	// intro page
 	// var introPage = $('#introPage')
-	var introPage = document.getElementById('introPage');
-	var play = document.getElementById('playButton');
 	// start page
 	// var playPage = $('#playPage')
-	var playPage = document.getElementById('playPage');
 
-//------------------------------------------------------------------------------
+
+	// hiding all the screens
+	function hideAll(){
+
+		for (let i=0; i < screens.length; i++){
+			screens[i].style.visibility = 'hidden';
+
+		}
+		backButton.style.visibility = "hidden";
+
+
+	}
+
+
+
+//-------------------------BACK BUTTON------------------------------------------
+	var backButton = document.getElementById('backButton');
+	// player clicks back
+	backButton.onclick = function() {
+	    console.log("back");
+		// hide everything
+		hideAll();
+
+
+
+		// show select page
+		selectPage.style.visibility = "visible";
+
+		onionClick = 0;
+		onion.src = "onion.png"
+		mode = "selectPage";
+	}
+
+
+
+
+//------------------------------PLAY BUTTON-------------------------------------
 
 
 	// player clicks play
@@ -87,33 +142,19 @@ $(document).ready(function(){
 	}
 
 
-	var backButton = document.getElementById('backButton');
-	// player clicks back
-	backButton.onclick = function() {
-	    console.log("back");
-		// hide everything
 
-		for (let i=0; i < game_screens.length; i++){
-			game_screens[i].style.visibility = 'hidden';
-
-		}
-
-
-		// show select page
-		selectPage.style.visibility = "visible";
-		backButton.style.visibility = "hidden";
-		onionClick = 0;
-		onion.src = "onion.png"
-		mode = "selectPage";
-	}
+//------------------------------------------------------------------------------
 
 	// Get the modal
 	var modal = document.getElementById('myModal');
 	var tryAgain = document.getElementById('tryAgain');
 	var takeQuiz = document.getElementById('takeQuiz');
 	var line = document.getElementById('line');
+
+
 	tryAgain.onclick = function() {
 	    if (mode == "portionGame"){
+	    	portionGame.style.visibility = 'visible';
 	    	console.log("portionGame try again");
 	    	modal.style.display = "none";
 	        completed = false;
@@ -132,20 +173,27 @@ $(document).ready(function(){
 
 
 
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+
 	// click portion mini game
 	portion.onclick = function() {
 	    hideAll();
 	    portionLesson.style.visibility = "visible";
 	    backButton.style.visibility = "visible";
+	    conPortionLesson.style.visibility = 'visible';
 
 	    mode = "portionLesson";
 	    console.log(mode);
 	    console.log(sessionStorage.portionGameScore);
 
 	}
+
+	//-----------_CUTTING LESSON -----------------------------------------
 	cutting.onclick = function() {
 	    hideAll();
 	    cuttingLesson.style.visibility = "visible";
+	    conCuttingLesson.style.visibility = 'visible';
 	    backButton.style.visibility = "visible";
 	    mode = "cuttingLesson";
 	    console.log(mode);
@@ -154,6 +202,7 @@ $(document).ready(function(){
 	    hideAll();
 	    doneLesson.style.visibility = "visible";
 	    backButton.style.visibility = 'visible';
+	    conDoneLesson.style.visibility = 'visible';
 	    setTimeout(eating, 1000)
 	    mode = "doneLesson";
 	}
@@ -175,6 +224,7 @@ $(document).ready(function(){
 	conCuttingLesson.onclick = function() {
 	    cuttingLesson.style.visibility = "hidden";
 	    cuttingGame.style.visibility = "visible";
+	    onion.style.visibility = 'visible';
 	    mode = "cuttingGame";
 	    console.log(mode);
 	}
@@ -195,6 +245,7 @@ $(document).ready(function(){
 
 	// cuttingGame onion
 	onion.onclick = function() {
+		onion.style.visibility = 'visible';
 		if (onionClick ==0){
 			onion.src = "onion1.png";
 			onionClick = 1;
@@ -209,14 +260,7 @@ $(document).ready(function(){
 		}
 	}
 
-	// hiding all the screens
-	function hideAll(){
-		selectPage.style.visibility = "hidden";
-		playPage.style.visibility = "hidden";
-		portionLesson.style.visibility = "hidden";
-		cuttingLesson.style.visibility = "hidden";
-		doneLesson.style.visibility = "hidden";
-	}
+
 
 	// start the games
 	startGame()
@@ -264,6 +308,7 @@ function checkUpdates(){
 	if (mode != "portionGame"){
 		clearInterval(portionUpdate);
 	}
+
 }
 
 function createBar(){
