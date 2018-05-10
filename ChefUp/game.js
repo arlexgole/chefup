@@ -58,7 +58,7 @@ $(document).ready(function(){
 		selectPage.style.visibility = "visible";
 		backButton.style.visibility = "hidden";
 		onionClick = 0;
-		onion.src = "onion.png"
+		onion.src = "img/onion.png"
 		mode = "selectPage";
 	}
 
@@ -136,8 +136,8 @@ $(document).ready(function(){
 	function eating(){
 		var doneGameEating = document.getElementById("doneGameEating");
 		var doneGameGood = document.getElementById("doneGameGood");
-		doneGameEating.src = "mouthClose.png"
-		doneGameGood.src = "pastaGood.png"
+		doneGameEating.src = "img/mouthClose.png"
+		doneGameGood.src = "img/pastaGood.png"
 	}
 	
 	// contiue from portion lesson
@@ -170,15 +170,15 @@ $(document).ready(function(){
 	// cuttingGame onion
 	onion.onclick = function() {
 		if (onionClick ==0){
-			onion.src = "onion1.png";
+			onion.src = "img/onion1.png";
 			onionClick = 1;
 		} 
 		else if (onionClick == 1){
-			onion.src = "onion2.png";
+			onion.src = "img/onion2.png";
 			onionClick = 2;
 		} 
 		else if (onionClick == 2){
-			onion.src = "onion3.png";
+			onion.src = "img/onion3.png";
 			conCuttingGame.style.visibility = "visible";
 		}
 	}
@@ -259,17 +259,17 @@ function createBar(){
 			if (x_pos > 618){
 				portionFeedback.innerHTML = "You poured too much salt!";
 				modal.style.display = "block";
-				portionFeedbackChef.src = "angryChef.png"
+				portionFeedbackChef.src = "img/angryChef.png"
 			}
 			else if (x_pos < 582){
 				portionFeedback.innerHTML = "You poured too little salt!";
 				modal.style.display = "block";
-				portionFeedbackChef.src = "angryChef.png"
+				portionFeedbackChef.src = "img/angryChef.png"
 			}
 			else {
 				portionFeedback.innerHTML = "Good job!";
 				modal.style.display = "block";
-				portionFeedbackChef.src = "happyChef.png";
+				portionFeedbackChef.src = "img/happyChef.png";
 				if (sessionStorage.portionGameScore == 0){
 					sessionStorage.portionGameScore = 1;
 				}
@@ -286,11 +286,11 @@ function moveHand(){
 	console.log(hand);
 	if (!cuttingPressed){
 		if (hand == "closed"){
-			handImg.src = "handOpen.png";
+			handImg.src = "img/handOpen.svg";
 			hand = "open";
 		}
 		else {
-			handImg.src = "handClosed.png"
+			handImg.src = "img/handClosed.svg"
 			hand = "closed";
 		}
 	}
@@ -299,13 +299,13 @@ function moveHand(){
 		if (hand == "open"){
 			modal.style.display = "block";
 			portionFeedback.innerHTML = "You cut your fingers! Look at your helping hand!";
-			portionFeedbackChef.src = "angryChef.png"
+			portionFeedbackChef.src = "img/angryChef.png"
 			// console.log("you lost");
 		}
 		else {
 			modal.style.display = "block";
 			portionFeedback.innerHTML = "Good job looking at your helping hand!";
-			portionFeedbackChef.src = "happyChef.png";
+			portionFeedbackChef.src = "img/happyChef.png";
 			// console.log("you win");
 		}
 	}
