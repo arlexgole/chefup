@@ -10,6 +10,8 @@ var cookUpdate1 = "";
 var doneUpdate = "";
 var onionClick = 0;
 var mixLevel = "one";
+var pastaDoneness = 0;
+
 sessionStorage.portionGameScore = 0;
 sessionStorage.timeGameScore = "";
 
@@ -76,7 +78,7 @@ $(document).ready(function(){
 		mixLesson.style.visibility = "hidden";
 		mixGame.style.visibility = "hidden";
 		mixQuiz.style.visibility = "hidden";
-		onions.style.visibility = "hidden";
+		pastaSpaghetti.style.visibility = "hidden";
 		chick.style.visibility = "hidden";
 		sauce.style.visibility = "hidden";
 
@@ -119,9 +121,9 @@ $(document).ready(function(){
 	    if (mode == "mixGame"){
 	    	modal.style.display = "none";
 	    	mixLevel = "one";
-	    	mixImg.src = "potEmpty.png";
+	    	mixImg.src = "img/potEmpty.svg";
 	    	chick.style.visibility = "visible";
-	    	onions.style.visibility = "visible";
+	    	pastaSpaghetti.style.visibility = "visible";
 	    	sauce.style.visibility = "visible";
 	    }
 	}
@@ -323,7 +325,7 @@ $(document).ready(function(){
 	    hideAll();
 	    doneGame.style.visibility = "visible";
 	    mode = "doneGame";
-	    doneUpdate = setInterval(checkDoneness, 100);
+	    doneUpdate = setInterval(checkDoneness, 300);
 	    console.log(mode);
 	}
 	conTimeLesson.onclick = function() {
@@ -339,15 +341,15 @@ $(document).ready(function(){
 	    mixGame.style.visibility = "visible";
 	    mode = "mixGame";
 	    mixLevel = "one";
-	    onions.style.visibility = "visible";
+	    pastaSpaghetti.style.visibility = "visible";
 	    chick.style.visibility = "visible";
 	    sauce.style.visibility = "visible";
-	    mixImg.src = "potEmpty.png";
+	    mixImg.src = "img/potEmpty.svg";
 	    console.log(mode);
 	}
 
 	var mixImg = document.getElementById("potEmpty");
-	var onions = document.getElementById("onions");
+	var pastaSpaghetti = document.getElementById("pastaSpaghetti");
 	var chick = document.getElementById("chick");
 	var sauce = document.getElementById("sauce");
 	var mixText = document.getElementById("mixText");
@@ -356,29 +358,31 @@ $(document).ready(function(){
 	chick.onclick = function() {
 		if (mixLevel == "one"){
 			chick.style.visibility = "hidden";
-			mixImg.src = "potChic.png";
+			mixImg.src = "img/mix1.svg";
 			mixLevel = "two";
-			mixText.innerHTML = "2. Get the onions"
+			mixText.innerHTML = "2. Put in the sauce"
 		}
 		else{
 			console.log("you lost");
 		}
 	}
-	onions.onclick = function() {
+
+	sauce.onclick = function() {
 		if (mixLevel == "two"){
-			onions.style.visibility = "hidden";
-			mixImg.src = "potChicOnion.png";
+			sauce.style.visibility = "hidden";
+			mixImg.src = "img/mix2.svg";
 			mixLevel = "three";
-			mixText.innerHTML = "3. Pour the sauce"
+			mixText.innerHTML = "3. Put in the pasta"
 		}
 		else{
 			console.log("you lost mix game");
 		}
 	}
-	sauce.onclick = function() {
+
+	pastaSpaghetti.onclick = function() {
 		if (mixLevel == "three"){
-			sauce.style.visibility = "hidden";
-			mixImg.src = "potUnmix.png";
+			pastaSpaghetti.style.visibility = "hidden";
+			mixImg.src = "img/mix3.svg";
 			mixLevel = "four";
 			mixText.innerHTML = "4. Click the pot and mix"
 		}
@@ -386,8 +390,24 @@ $(document).ready(function(){
 			console.log("you lost mix game");
 		}
 	}
+
 	mixImg.onclick = function() {
 		if (mixLevel == "four"){
+			mixImg.src = "img/mix4.svg"
+			mixLevel = "five"
+		} else 
+
+		if (mixLevel == "five"){
+			mixImg.src = "img/mix5.svg"
+			mixLevel = "six"
+		} else 
+
+		if (mixLevel == "six"){
+			mixImg.src = "img/mix6.svg"
+			mixLevel = "seven"
+		} else 
+		
+		if (mixLevel == "seven"){
 			mixImg.src = "potMix.png";
 			portionFeedback.innerHTML = "Good job mixing!";
 			modal.style.display = "block";
@@ -694,7 +714,7 @@ function createBar(){
 	var line = document.getElementById('line');
 		if (!(completed)) {
 			// less than 1000 
-			if (x_pos<1000 && pressed && key==32){
+			if (x_pos<900 && pressed && key==32){
 				x_pos += 10;
 				line.style.left = x_pos + 'px';
 			} else {
@@ -768,17 +788,52 @@ function eating1(){
 function eating2(){
 	var doneGameEating = document.getElementById("doneGameEating");
 	var doneGameGood = document.getElementById("doneGameGood");
+	var doneGameText = document.getElementById("resetText");
+
 	doneGameEating.src = "img/mouthClose.svg"
-	doneGameGood.src = "img/pastaGood.svg"
+	doneGameText.innerHTML = "<br>"
+
+	if (pastaDoneness < 50) {
+		doneGameGood.src = "img/tooHard.svg"
+	}
+
+	else if (pastaDoneness > 60) {
+		doneGameGood.src = "img/tooSoft.svg"
+		doneGameText.innerHTML = "Start over."
+		pastaDoneness = 0;
+	}
+
+	else {
+		doneGameGood.src = "img/pastaGood.svg"
+	}
+
 }
 
-function checkDoneness(){
-	var potSpaghetti1 = document.getElementById('potSpaghetti');
-	var modal = document.getElementById('pastaGoodModal');
 
-	potSpaghetti1.onclick = function () {
+function checkDoneness(){
+	var potSpaghetti = document.getElementById('potSpaghetti');
+	var modal = document.getElementById('pastaGoodModal');
+	var modalContent = document.getElementById('pastaGoodModalContent')
+
+
+	pastaDoneness += 1;
+	console.log(pastaDoneness);
+
+	potSpaghetti.onclick = function () {
+		if (pastaDoneness < 50) {
+			modalContent.style.backgroundColor = 'red'
+		}
+
+		else if (pastaDoneness > 60) {
+			modalContent.style.backgroundColor = 'red'
+		}
+
+		else {
+			modalContent.style.backgroundColor = '#8CC63F'
+		}
+
 		modal.style.display = "block";
-	    setTimeout(eating1, 300);
+		setTimeout(eating1, 300);
 
 	}
 }
