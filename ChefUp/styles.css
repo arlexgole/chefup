@@ -373,7 +373,7 @@ svg{
     height: 400px;
 }
 
-#pastaGoodModal .modal-content {
+#pastaGoodModalContent {
     background-color: #8CC63F;
 }
 /* The Close Button */
@@ -455,7 +455,7 @@ svg{
     top: 350px;
     left: 520px;
 }
-#meat1:hover, #meat2:hover, #meat3:hover, #meat4:hover, #meat5:hover, #chick:hover, #onions:hover, #sauce:hover{
+#meat1:hover, #meat2:hover, #meat3:hover, #meat4:hover, #meat5:hover, #chick:hover, #pastaSpaghetti:hover, #sauce:hover{
     border-style: solid;
     border-color: white;
     border-width: 1px;
@@ -465,6 +465,7 @@ svg{
     position: absolute;
     left: 200px;
     top: 70px;
+    width: 550px;
 }
 #chick{
     position: absolute;
@@ -478,8 +479,9 @@ svg{
 }
 #sauce{
     position: absolute;
-    left: 850px;
-    top: 400px
+    left: 876px;
+    top: 432px;
+    width: 148px;
 }
 #mix:hover{
     cursor: pointer;
@@ -498,4 +500,19 @@ svg{
     left: 400px;
     top: 150px;
 }
+
+#resetText {
+    position: absolute;
+    top: 250px;
+    left: 400px;
+}
+
+#pastaSpaghetti {
+    position: absolute;
+    width: 136px;
+    left: 875px;
+    top: 260px;
+}
+
+
 }
