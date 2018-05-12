@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="finalGame.js"></script>
+
+         <!-- fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+     <body>
+        <div id="container" class="pink-bg">
+
+            <!-- ######################## Seasoning Game ################################################################################### -->
+        	<div id="firstGame">
+                <p>Press space to put some salt</p>
+                <div id="bar"> </div>
+                <div id="green"> </div>
+                <div id="line"> </div>
+
+                <img id="pot" src="img/pot.svg">
+                <img id="salt" src="img/salt.svg">
+            </div>
+
+            <div id="secondGame">
+        		<p class="heading"> If salt and other spices are not enough to bring out the flavor of foods, what should to be added next? </p>
+        		<br> <br>
+        		<form>
+	  				<input type="radio" name="knife" value="right" id="right2"> Something Acidic <br>
+	  				<input type="radio" name="knife" value="wrong" id="wrong2"> MSG <br> 
+				</form> 
+				<div class="conButton" id="conSecondGame"> Continue </div>
+            </div>
+
+            <!-- ######################## Doneness Game ################################################################################### -->            
+            
+            <div id="thirdGame">
+                <p> Click to test the doneness of the pasta! </p>
+                <img src="img/potSpaghetti.svg" id="potSpaghetti">
+            </div>
+
+            <div id="fourthGame">
+                <img src="img/fishQuestion.png" id="fishImg"> 
+                <p class="heading"> True or False: A general rule to check if a fish is cooked is to check its texture. </p>
+                <form>
+                     <input type="radio" name="knife" value="right" id="right4"> True <br> 
+                      <input type="radio" name="knife" value="wrong" id="wrong4"> False <br> 
+                </form> 
+				<div class="conButton" id="conFourthGame"> Continue </div>
+            </div>
+
+
+
+
+            <!-- ######################## Cutting Game ################################################################################### -->
+
+            <div id="fifthGame">
+                <p> Press space to cut. Don't cut your fingers!</p>
+                <img id="meat" src="img/meat.svg">
+                <img id="cuttingHand" src="img/handClosed.svg">
+                <img id="handKnife" src="img/handKnife.svg">
+            </div>
+
+            <div id="sixthGame">
+                <p class="heading"> Cutting: This position protects your fingertips by curling them inwards, using your knuckles to guide your knife. </p> <br>
+                <img src="claw.png">
+                <form>
+                    <br>
+                    <input type="radio" value="right" id="wrong6"> The Shield <br> <br>
+                    <input type="radio" value="wrong" id="right6"> The Claw <br> 
+                </form> 
+                <div class="conButton" id="conSixthGame"> Continue </div>
+            </div>
+
+            <!-- ######################## Timing Game ################################################################################### -->
+
+            <div id="seventhGame">
+                <p> Click the meat when it is done </p>
+                <img src ="chickenPan.png" id="chickenPan"> 
+                <img src="1raw.png" id="meat1">
+                <img src="2raw.png" id="meat2">
+                <img src="3raw.png" id="meat3">
+                <img src="4raw.png" id="meat4">
+                <img src="5raw.png" id="meat5">
+            </div>
+
+            <div id="eighthGame">
+                <p class="heading"> True or False: A good tip to save time is to clean at the end and focus on cooking. </p>
+                <form>
+                     <input type="radio" name="knife" value="wrong" id="wrong8"> True <br> 
+                      <input type="radio" name="knife" value="right" id="right8"> False <br> 
+                </form> 
+                <div class="conButton" id="conEighthGame"> Continue </div>
+            </div>
+
+            <!-- ######################## Mixing Game ################################################################################### -->
+
+            <div id="ninethGame">
+                <p class="longText" id="mixText"> 1. First get the chicken! </p>
+                <img src="img/potEmpty.svg" id="potEmpty">
+                <img src="img/sauce.svg" id="sauce">
+                <img src="chick.png" id="chick">
+                <img src="img/spaghetti.svg" id="pastaSpaghetti">
+            </div>
+
+            <div id="tenthGame">
+                <img src="img/mixingQuestion.png" id="mixImg"> 
+                <p class="heading"> True or False: Uniform distribution of ingredients is one of the key objectives of mixing. </p>
+                <form>
+                     <input type="radio" name="knife" value="right" id="right10"> True <br> 
+                      <input type="radio" name="knife" value="wrong" id="wrong10"> False <br> 
+                </form> 
+
+                <div class="conButton" id="conTenthGame"> Continue </div>
+            </div>
+
+            <div id="eleventhGame">
+                <p id="summaryText"><br></p>
+                <img src="img/smileChef.svg" id="chefEnd">
+                <div class="conButton" id="conEleventhGame"> Restart </div>
+            </div>
+        </div>
+    </body>
+
+</html>
