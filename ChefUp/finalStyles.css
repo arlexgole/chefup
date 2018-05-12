@@ -1,0 +1,106 @@
+body{
+	height: 600px;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	margin: 0px;
+}
+
+#container{
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 600px;
+	width: 1200px;
+	border: solid;
+	border-width: 0.5px;
+	border-color: #C0C0C0;
+}
+p{
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+}
+
+/*#firstGame,*/
+#secondGame,
+#thirdGame,
+#fourthGam,
+#fifthGame,
+#sixthGame,
+#seventhGame,
+#eighthGame,
+#ninthGame,
+#tenthGame{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	height: 600px;
+	width: 1200px;
+	visibility: hidden;
+	padding-bottom: 0px;
+    overflow: hidden;
+}
+
+#firstGame{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	height: 600px;
+	width: 1200px;
+	padding-bottom: 0px;
+    overflow: hidden;
+}
+
+.conButton{
+	width: 70px;
+	position: absolute;
+	top: 500px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 535px;
+}
+
+/*first game*/
+#bar{
+	position: absolute;
+	width: 600px;
+	height: 45px;
+	background-color: #ee5253;
+	margin-top: 10px;
+	left: 300px;
+}
+#green{
+	position: absolute;
+	width: 36px;
+	height: 45px;
+	background-color: #1dd1a1;
+	margin-top: 10px;
+	left: 582px;
+}
+#line{
+	position: absolute;
+	width: 5px;
+	height: 30px;
+	background-color: white;
+	margin-top: 10px;
+	left: 301px;
+}
+#salt{
+	position: absolute;
+	top: 200px;
+	left: 550px;
+}
+#pot{
+	position: absolute;
+	top: 150px;
+	left: 380px;
+}
+
+#onion{
+	cursor: url("knife.png"), auto;
+}
